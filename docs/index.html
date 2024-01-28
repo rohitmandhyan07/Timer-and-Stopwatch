@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Timer and Stopwatch - RMD</title>
     <!-- External CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" /> 
+    <link rel="stylesheet" href="assets/css/style.css" > 
     <!-- or just use regular closing <link ..... > --> 
 </head>
 <body>
@@ -13,25 +13,62 @@
       <div class="watch">
         <div class="outer-circle">
             <div class="inner-circle">
-                <span class="text minute">01 :</span>
-                <span class="text sec">&nbsp;47 :</span>
-                <span class="text msec">&nbsp;97</span>
+                <span class="text minute">0 :</span>
+                <span class="text sec">&nbsp; 0 :</span>
+                <span class="text msec">&nbsp; 0</span>
 
             </div>
         </div>
         <div class="button-wrapper">
-            <button class="button">Reset</button>
-            <button class="button">Play</button>
-            <button class="button">Lap</button>
+            <button class="button reset hidden">Reset</button>
+            <button class="button play ">Play</button>
+            <button class="button lap hidden">Lap</button>
         </div>
       </div>
       <ul class="laps">
+        <!-- <li class="lap-item">
+            <span class="number">#1</span>
+            <span class="time-stamp"> 01 : 43 : 07</span>
+             
+        </li>
         <li class="lap-item">
             <span class="number">#1</span>
             <span class="time-stamp"> 01 : 43 : 07</span>
             
         </li>
+        <li class="lap-item">
+            <span class="number">#1</span>
+            <span class="time-stamp"> 01 : 43 : 07</span>
+            
+        </li>
+        <li class="lap-item">
+            <span class="number">#1</span>
+            <span class="time-stamp"> 01 : 43 : 07</span>
+            
+        </li>
+        <li class="lap-item">
+            <span class="number">#1</span>
+            <span class="time-stamp"> 01 : 43 : 07</span>
+            
+        </li>
+        <li class="lap-item">
+            <span class="number">#1</span>
+            <span class="time-stamp"> 01 : 43 : 07</span>
+            
+        </li>
+        <li class="lap-item">
+            <span class="number">#1</span>
+            <span class="time-stamp"> 01 : 43 : 07</span>
+            
+        </li>
+        <li class="lap-item">
+            <span class="number">#1</span>
+            <span class="time-stamp"> 01 : 43 : 07</span>
+            
+        </li> -->
+        <button class="lap-clear-button hidden">Clear All</button>
       </ul>
     </div>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
 }
 body{
     font-family: sans-serif;
@@ -22,6 +23,24 @@ body{
     align-items: center;
     justify-content: center;
 }
+.animation-bg {
+    background: linear-gradient(-45deg, #ee7752, orange, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 7s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .inner-circle{
     width: 210px;
     height: 210px;
@@ -69,19 +88,27 @@ body{
 .laps {
     list-style: none;
     color: white;
-    /* width: 250px; */
+    width: 250px;
     height: 250px;
     overflow: auto;
     position: relative;
-    padding: 15px;
+    /* padding: 30px 0; */
+    margin-top: 30px;
+}
+.laps::-webkit-scrollbar {
+    display: none;
 }
 
 .lap-item {
     display: inline-block;
-    width: 250px;
-    padding: 15px;
-    background-color: red;
+    /* width: 250px */
+    width: 100%;
+    padding: 10px;
+    /* background-color: red; */
     text-align: center;
+    border: 1px solid #444;
+    border-radius: 50px;
+    margin-bottom: 15px;
 }
 .number {
     color: #cccccc;
@@ -91,4 +118,27 @@ body{
 .time-stamp {
     display: inline-block;
     margin-left: 25px;
+}
+
+.lap-clear-button {
+    display: block;
+    position: fixed;
+    /* bottom: 50px; */
+    z-index: 1000;
+    bottom: 35px;
+    left: 50%;
+    transform: translate(-50%);
+    /* top: 0; */
+    width: 130 x;
+    padding: 10px 0;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+.hidden {
+    /* display: none; */
+    visibility: hidden;
 }
