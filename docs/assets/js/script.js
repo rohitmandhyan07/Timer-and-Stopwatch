@@ -21,11 +21,13 @@ let isReset = false;
 const toggleButton = () => {
     lapButton.classList.remove("hidden");
     resetButton.classList.remove("hidden");
+    // clearButton.classList.remove("hidden");
     // lapButton.classList.toggle("hidden");
     // resetButton.classList.toggle("hidden");
 }
 
 const play = () => {
+    
     if(!isPlay && !isReset) {
         playButton.innerHTML = 'Pause';
         bg.classList.add("animation-bg");
@@ -101,16 +103,29 @@ const reset = () => {
     second.innerHTML = '&nbsp 0 :';
     centiSecond.innerHTML = '&nbsp; 0';
     
+    
+    // also hide the lap-clear-button since there are no laps to clear.
+    clearButton.classList.remove("hidden");
+    
     // clear the laps and set lapItem back to zero.
     laps.innerHTML = '';
     lapItem = 0;
-    
-    // also hide the lap-clear-button since there are no laps to clear.
-    clearButton.classList.add("hidden");
+    // Create a new clearButton
+    const newClearButton = document.createElement("button");
+    newClearButton.className = "lap-clear-button hidden";
+    newClearButton.textContent = "Clear All";
+    newClearButton.addEventListener("click", clearAll);
+
+    // Append the new clearButton to the laps container
+    laps.appendChild(newClearButton);
+
+     // Also, remove the "hidden" class from the clearButton if it exists
+     clearButton.classList.remove("hidden");
 }
 
 const lap = () => {
-    const li =document.createElement("li");
+    // clearButton.classList.remove("hidden");
+    const li = document.createElement("li");
     const number = document.createElement("span");
     const timeStamp = document.createElement("span");
 
@@ -127,11 +142,33 @@ const lap = () => {
     clearButton.classList.remove("hidden");
 }
 
-function clearAll() {
-    laps.innerHTML = '';
+const clearAll = () => {
+/*    laps.innerHTML = '';
     laps.append(clearButton);
     clearButton.classList.add("hidden");
+    lapItem = 0; */
+
+    laps.innerHTML = '';
     lapItem = 0;
+    /*check if there are any lap items present 
+    in the laps container using laps.querySelector(".lap-item"). */
+    /*if(!laps.querySelector(".lap-item")) {
+        // If there are no lap items, hide the clearButton.
+        clearButton.classList.add("hidden");
+    }*/
+
+    clearButton.classList.add("hidden");
+    
+
+    // Create a new clearButton
+    const newClearButton = document.createElement("button");
+    newClearButton.className = "lap-clear-button hidden";
+    newClearButton.textContent = "Clear All";
+    newClearButton.addEventListener("click", clearAll);
+
+    // Append the new clearButton to the laps container
+    laps.appendChild(newClearButton);
+
 }
 
 playButton.addEventListener("click", play);
